@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="/static/css/estilos.css">  
+
+    </head>
+
+
+
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+        
+        <section th:replace="~{layout/plantilla :: sectionA}"/>
+
+
+        <section>
+            <div class="carousel-container" style="max-width: 900px; margin: 0 auto;">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://zelda.nintendo.com/tears-of-the-kingdom/images/share-fb.jpg" height="400" class="d-block w-100" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://i.blogs.es/b0418e/resident-evil-4-2023/1366_2000.jpeg" height="400" class="d-block w-100" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.trustedreviews.com/wp-content/uploads/sites/54/2022/03/Hogwarts-Legacy-1-920x483.jpg" height="400" class="d-block w-100" alt="Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </section> 
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
+</html>
