@@ -1,0 +1,33 @@
+#main-header {
+
+    background: rgb(0,189,255);
+    background: linear-gradient(90deg, rgba(0,189,255,1) 0%, rgba(39,32,255,1) 100%);
+}
+
+footer {
+
+    background: rgb(39,32,255);
+    background: linear-gradient(90deg, rgba(39,32,255,1) 0%, rgba(0,189,255,1) 100%);
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */ 
+}
+
+.aside-left {
+    width: 30%;
+    float: left; 
+    padding: 10px;
+}
+
+.aside-right {
+    width: 65%;
+    float: right; 
+    padding: 10px;
+}
+
+footer {
+    clear: both;
+}

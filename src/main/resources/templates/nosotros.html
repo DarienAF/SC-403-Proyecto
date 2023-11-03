@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TicoElectrox</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"/>
+
+    </head>
+
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+
+        <section th:replace="~{layout/plantilla :: sectionA}"/>
+
+
+        <article class="iframe-container">
+            <figure>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.770344215492!2d-84.04500782540572!3d9.953056173841627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e46c3aed7547%3A0x1ff8f4ab73fb1ffd!2sTico%20Electrox!5e0!3m2!1ses!2scr!4v1698891223690!5m2!1ses!2scr" 
+                        width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </figure>
+
+        </article>
+
+
+        <section>
+            <aside class="aside-left">
+                <h2>Nosotros</h2>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipPhpTrawgYbKiWk6BOTYbq8n8O-G3DECdOiXlvw=s1360-w1360-h1020" height="350"  alt="Image " class="mt-1 p-1">
+            </aside>
+            <aside class="aside-right">
+                <h2>TicoElectrox</h2>
+                
+                    <article>
+                        <hr>
+                        <p>Dolor sit amet consectetur adipiscing elit, egestas euismod magnis quis lobortis semper erat scelerisque, sociis aenean at aliquam risus fringilla. Eget vitae phasellus condimentum dis natoque integer hac aenean eleifend, at in quam dapibus magnis ullamcorper rutrum hendrerit, ligula orci maecenas a per faucibus mus viverra. Inceptos interdum magna sodales iaculis rutrum ante pellentesque ligula bibendum gravida convallis nisl commodo, litora tristique tincidunt pulvinar ullamcorper tellus maecenas a mauris porta per mattis. In ornare volutpat velit gravida augue inceptos natoque metus, porttitor eros semper laoreet scelerisque consequat donec, felis nisi senectus fames dui auctor facilisis.</p>
+                        <hr>
+                    </article>
+
+            </aside>
+
+        </section>
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+
+    </body>
+</html>
