@@ -1,6 +1,7 @@
+
 package com.sc403.service;
 
-/*import com.sc403.domain.Categoria;
+import com.sc403.domain.Categoria;
 import java.util.List;
 
 public interface CategoriaService {
@@ -17,4 +18,4 @@ public interface CategoriaService {
     //Se elimina una categoria segun el id pasado
     
     public void delete(Categoria categoria);
-}*/
+}

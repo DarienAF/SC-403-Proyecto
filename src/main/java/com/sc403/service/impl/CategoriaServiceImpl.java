@@ -1,6 +1,6 @@
 package com.sc403.service.impl;
 
-/*import com.sc403.dao.CategoriaDao;
+import com.sc403.dao.CategoriaDao;
 import com.sc403.domain.Categoria;
 import com.sc403.service.CategoriaService;
 import java.util.List;
@@ -41,4 +41,4 @@ public class CategoriaServiceImpl implements CategoriaService{
     public void delete(Categoria categoria) {
         categoriaDao.delete(categoria);
     }
-}*/
+}

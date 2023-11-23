@@ -2,22 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout/plantilla :: head}">
-        <title>TicoElectrox</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="/static/css/estilos.css">  
-
+        <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"/> 
+        
     </head>
-
-
-
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
+                <section th:replace="~{layout/plantilla :: sectionA}"/>
 
-        
-        <section th:replace="~{layout/plantilla :: sectionA}"/>
-
-
-        <section>
+         <section>
             <div class="carousel-container" style="max-width: 900px; margin: 0 auto;">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
@@ -43,8 +37,6 @@
             </div>
 
         </section> 
-
-
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>

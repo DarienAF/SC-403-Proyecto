@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ProductoServiceImpl implements ProductoService{
 
-
+    
     @Autowired
     private ProductoDao productoDao;
     
@@ -34,14 +34,42 @@ public class ProductoServiceImpl implements ProductoService{
     }
             
     //Se actualiza una producto o se inserta una nueva... (Si no hay id es un insert)
+   @Transactional
     @Override
     public void save(Producto producto) {
         productoDao.save(producto);
     }
-    
+    @Transactional
     //Se elimina una producto segun el id pasado
     @Override
     public void delete(Producto producto) {
         productoDao.delete(producto);
+    }
+    
+      //METODO PARA OBTENER UN LISTADO DE PRODUCTOS FILTRADO
+    //POR PRECIO, ORDENADO POR DESCRIPCION
+    @Transactional(readOnly=true)
+    @Override
+    public List<Producto> consultaQuery(
+            double precioInf, double precioSup){
+    return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+    
+        //METODO PARA OBTENER UN LISTADO DE PRODUCTOS FILTRADO
+    //POR PRECIO, ORDENADO POR DESCRIPCION
+    @Transactional(readOnly=true)
+    @Override
+    public List<Producto> consultaJPQL(
+            double precioInf, double precioSup){
+    return productoDao.consultaJPQL(precioInf, precioSup);
+    }
+    
+       //METODO PARA OBTENER UN LISTADO DE PRODUCTOS FILTRADO
+    //POR PRECIO, ORDENADO POR DESCRIPCION
+    @Transactional(readOnly=true)
+    @Override
+    public List<Producto> consultaSQL(
+            double precioInf, double precioSup){
+    return productoDao.consultaJPQL(precioInf, precioSup);
     }
 }

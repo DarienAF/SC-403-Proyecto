@@ -4,31 +4,15 @@
     <head th:replace="~{layout/plantilla :: head}">
         <title>TODO supply a title</title>
         <meta charset="UTF-8"/>
-          <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"/>
+        
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
- 
-          
-        <section th:replace="~{layout/plantilla :: sectionA}"/>
-
-    <section>
-    <div class="container">
-        <div class="row">
-            <div th:each="producto : ${productos}" class="col-sm-6 col-md-4 p-2">
-                <div class="card" style="width: 18rem;">
-                    <img th:src="${producto.rutaImagen}" class="card-img-top img-card" alt="Producto" style="width: 100%; height: 250px;">
-                    <div class="card-body">
-                        <h5 th:text="${producto.descripcion}" class="card-title">Card title</h5>
-                        <p th:text="'Precio: ' + ${producto.precio}" class="card-text">Price</p>
-                        <a href="#" class="btn btn-primary">Pedir</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-            
+        
+        <section th:replace="~{producto/fragmentos :: botonesAgregar}"/>
+        <section th:replace="~{producto/fragmentos :: agregarProducto}"/>
+        <section th:replace="~{producto/fragmentos :: listadoProductos}"/>
+        
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>

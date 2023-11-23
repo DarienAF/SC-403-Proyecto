@@ -4,6 +4,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
     <head th:replace="~{layout/plantilla :: head}">
         <title>TechShop</title>
+       <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"/>
     </head>
     <body>
         <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
@@ -91,8 +92,9 @@
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/categoria/modificar/}+${categoria.idCategoria}"
                                                    class="btn btn-success">
-                                                    <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a></td></tr>
+                                                    <i class="fas fa-pencil"></i> [[#{accion.actualizar}]]</a>
                                                 </div>
+                                            </td></tr>
                                     </tbody>
                                 </table>
                             </div>
