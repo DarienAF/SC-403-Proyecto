@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TechShop</title>
+    </head>
+    <body>
+        <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
+        <section th:fragment="categoriasTabs" class="mt-1 p-3">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorías
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="/vistas/vista">[[#{pruebas.todas}]]</a>
+                    </li>
+                    <li th:each="c : ${categorias}">
+                        <a class="dropdown-item" th:href="@{/vistas/vista/}+${c.idCategoria}">[[${c.descripcion}]]</a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- 2 Sección principal para mostrar la informaccion de la entidad producto -->
+        <section th:fragment="listadoProductos" id="productos">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                <div class="col" th:each="p : ${productos}">
+                    <div class="card h-100 p-3 mx-auto" style="width: 25rem;">
+                        <figure><img th:src="${p.rutaImagen}" 
+                                     class="card-img-top" alt="..."
+                                     height="320"
+                                     />
+                           
+                        </figure>
+                        <div class="card-header">
+                            <h4 class="card-title">[[${p.descripcion}]]</h4>
+                        </div>
+                        <div class="card-body">
+                             <figcaption>Precio: [[${p.precio}]] </figcaption>
+                           
+                            <figcaption> Existencias: [[${p.existencias}]]</figcaption>
+                           
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" th:attr="data-bs-target='#modal'+${p.idProducto}">
+                                Ver detalles
+                            </button>
+
+                            <!-- Modal -->
+                            <div th:id="'modal'+${p.idProducto}" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title fs-5" id="exampleModalLabel">[[${p.descripcion}]]</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            [[${p.detalle}]]
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+       
+
+
+    </body>
+</html>

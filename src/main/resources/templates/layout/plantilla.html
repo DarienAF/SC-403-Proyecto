@@ -54,7 +54,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <ul class="navbar-nav" sec:authorize='hasRole("ROLE_VENDEDOR")'>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/categoria/listado}">[[#{plantilla.categorias}]]</a></li>
                             <li class="nav-item px-2"><a class="nav-link" th:href="@{/producto/listado}">[[#{plantilla.productos}]]</a></li>  
-                            <li class="nav-item px-2"><a class="nav-link" th:href="@{/nosotros}">[[#{plantilla.nosotros}]]</a></li> 
+                           <li class="nav-item px-2" sec:authorize='hasRole("ROLE_VENDEDOR")'><a class="nav-link" th:href="@{/vistas/vista}">[[#{plantilla.vista}]]</a></li>
+                            <li class="nav-item px-2" sec:authorize='hasRole("ROLE_VENDEDOR")'><a class="nav-link" th:href="@{/nosotros}">[[#{plantilla.nosotros}]]</a></li> 
                           
                             <li class="nav-item dropdown" sec:authorize='hasRole("ROLE_ADMIN")'>
                                 <a class="nav-link dropdown-toggle" 
