@@ -5,13 +5,13 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" type="text/css" href="static/css/index.css" th:href="@{/css/index.css}"/> 
-        
+
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
-                <section th:replace="~{layout/plantilla :: sectionA}"/>
+        <section th:replace="~{layout/plantilla :: sectionA}"/>
 
-         <section>
+        <section>
             <div class="carousel-container" style="max-width: 900px; margin: 0 auto;">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
@@ -37,6 +37,9 @@
             </div>
 
         </section> 
+        
+        <section th:replace="~{carrito/fragmentos :: listadoProductos}"/>
+
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>

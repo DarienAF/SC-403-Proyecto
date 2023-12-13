@@ -78,10 +78,12 @@ public class ProjectConfig implements WebMvcConfigurer {
                         "/nosotros/**", "/css/**", "/vistas/**",
                         "/img/**")
                 .permitAll()
-                        
+                       
                 .requestMatchers(
                         "/producto/listado",
                         "/categoria/listado",
+                        " /registro/nuevo" ,
+
                         "/usuario/listado"
                         ).hasAnyRole("ADMIN", "VENDEDOR")
                 .requestMatchers("/facturar/carrito")

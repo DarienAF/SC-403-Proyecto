@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
@@ -8,11 +9,10 @@
     <body>
         <!-- 1 Sección para crear el boton de agregar... llamará a una ventana modal-->
         <section th:fragment="categoriasTabs" class="mt-1 p-3">
-            <div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     Categorías
-                </a>
-
+                </button>
                 <ul class="dropdown-menu">
                     <li class="nav-item">
                         <a class="dropdown-item" href="/vistas/vista">[[#{pruebas.todas}]]</a>
@@ -22,28 +22,35 @@
                     </li>
                 </ul>
 
+                <form action="/carrito/listado" class="ml-2">
+                    <button type="submit" class="btn btn-info">
+                        <i class="fas fa-cart-plus"></i>
+                        [[#{carrito.verCarrito}]] [[${listaTotal}]]
+                    </button>
+                </form>
             </div>
+
         </section>
 
         <!-- 2 Sección principal para mostrar la informaccion de la entidad producto -->
         <section th:fragment="listadoProductos" id="productos">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
-                <div class="col" th:each="p : ${productos}">
+                <div class="col" th:each="p : ${productos}" >
                     <div class="card h-100 p-3 mx-auto" style="width: 25rem;">
-                        <figure><img th:src="${p.rutaImagen}" 
-                                     class="card-img-top" alt="..."
-                                     height="320"
-                                     />
-                           
+                        <figure align="center">
+                            <img th:src="${p.rutaImagen}"height="180"/>
                         </figure>
                         <div class="card-header">
                             <h4 class="card-title">[[${p.descripcion}]]</h4>
                         </div>
                         <div class="card-body">
-                             <figcaption>Precio: [[${p.precio}]] </figcaption>
-                           
+                            <figcaption>Precio: [[${p.precio}]] </figcaption>
+
                             <figcaption> Existencias: [[${p.existencias}]]</figcaption>
-                           
+
+                            <button class="btn btn-ligth" id="addCar" 
+                                    name="addCar" onclick="addCard(this.form)" 
+                                    type="button"><i class="fas fa-cart-plus"></i></button>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" th:attr="data-bs-target='#modal'+${p.idProducto}">
                                 Ver detalles
@@ -73,8 +80,6 @@
         </section>
 
 
-
-       
 
 
     </body>

@@ -21,7 +21,7 @@ public class ProductoServiceImpl implements ProductoService{
         var productos = productoDao.findAll();
         //Si son solo activas (activo = true) debo filtrar las inactivas...
         if (activo) {
-            productos.removeIf(e -> !e.getActivo());
+            productos.removeIf(e -> !e.isActivo());
         }
         return productos;
     }

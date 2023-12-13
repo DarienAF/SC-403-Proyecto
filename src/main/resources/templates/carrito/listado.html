@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
       xmlns:th="http://www.thymeleaf.org">
     <head th:replace="~{layout/plantilla :: head}">
         <title>TODO supply a title</title>
@@ -8,10 +9,9 @@
     </head>
     <body>
         <header th:replace="~{layout/plantilla :: header}"/>
-        <section th:replace="~{layout/plantilla :: sectionA}"/>
-        <section th:replace="~{vistas/fragmentosV :: categoriasTabs}"/>
-        <section th:replace="~{vistas/fragmentosV :: listadoProductos}"/>
-       
+        
+        <section th:replace="~{carrito/fragmentos :: listadoCarrito}"/>
+
         <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>
